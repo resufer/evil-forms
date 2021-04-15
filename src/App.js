@@ -10,11 +10,16 @@ function App() {
     <div className='wrapper'>
       <div className='general'>
         <div className='general__title'>Filing a complaint</div>
-        <Name />
-        <Surname />
-        <Position />
-        <Contacts />
-        <Descriptions />
+        <div className='form'>
+          <div className='inputs'>
+            <Name />
+            <Surname />
+            <Position />
+            <Contacts />
+          </div>
+          <Descriptions />
+        </div>
+        <button className='send'>Send</button>
       </div>
     </div>
   );
