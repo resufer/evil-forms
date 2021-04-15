@@ -3,8 +3,8 @@ import React from 'react';
 
 function Name() {
   return (
-    <div>
-      Input Name
+    <div className='inputName'>
+      <input placeholder='Your name' />
     </div>
   )
 };
