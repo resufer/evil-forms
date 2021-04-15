@@ -3,8 +3,8 @@ import React from 'react';
 
 function Surname() {
   return (
-    <div>
-      Input Surname
+    <div className='inputSurname'>
+      <input placeholder='Your surname' />
     </div>
   )
 };
