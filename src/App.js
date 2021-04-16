@@ -17,7 +17,9 @@ function App() {
             <Position />
             <Contacts />
           </div>
-          <Descriptions />
+          <div className='descriptionArea'>
+            <Descriptions />
+          </div>
         </div>
         <button className='send'>Send</button>
       </div>
