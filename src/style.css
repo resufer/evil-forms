@@ -42,7 +42,7 @@
   height: 30%;
 }
 
-.inputName, .inputSurname, .position, .contacts, .descriptionArea, .descriptions {
+.inputName, .inputSurname, .position, .contacts, .descriptionArea, .descriptions, .send {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -52,10 +52,7 @@
 .inputName input, .inputSurname input, .position select, .contacts input {
   width: 60%;
   height: 15%;
-}
-
-.position select {
-  font-size: calc(0.75vw + 7.5px);
+  font-size: calc(0.75vw + 5px);
 }
 
 .descriptions {
@@ -67,4 +64,16 @@
   width: 100%;
   height: 80%;
   resize: none;
+  font-size: calc(1vw + 5px);
+}
+
+.send {
+  width: 50%;
+  height: 20%;
+  margin: 0 auto;
+}
+
+.send button {
+  width: 50%;
+  height: 20%;
 }
