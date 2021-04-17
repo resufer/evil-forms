@@ -21,7 +21,9 @@ function App() {
             <Descriptions />
           </div>
         </div>
-        <button className='send'>Send</button>
+        <div className='send'>
+          <button>Send</button>
+        </div>
       </div>
     </div>
   );
