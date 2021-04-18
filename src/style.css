@@ -43,10 +43,19 @@
 }
 
 .inputName, .inputSurname, .position, .contacts, .descriptionArea, .descriptions, .send {
+  position: relative;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+}
+
+.alert {
+  position: absolute;
+  top: 25%;
+  font-size: calc(1.25vw + 7.5px);
+  color: crimson;
+  opacity: 0.8;
 }
 
 .inputName input, .inputSurname input, .position select, .contacts input {
@@ -77,3 +86,4 @@
   width: 50%;
   height: 20%;
 }
+
