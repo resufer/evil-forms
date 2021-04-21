@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class Descriptions extends React.Component {
   state = {
     wordCount: 0,
@@ -16,10 +15,10 @@ class Descriptions extends React.Component {
 
     descriptions.addEventListener('blur', () => {
       if (descriptions.value && this.state.wordCount > 4) {
+        this.props.setAngry(this.props.angry + this.state.wordCount / 2);
         setInterval(() => {
           this.setState({ angryCount: 3 });
-          this.props.setAngry(this.state.wordCount / 4);
-        }, 5000)
+        }, 3500)
       }
     })
   }
@@ -27,7 +26,9 @@ class Descriptions extends React.Component {
   render() {
     return (
       <div className='descriptions'>
-        <textarea placeholder='describe the situation' id='descriptions' disabled={this.state.angryCount === 3}></textarea>
+        <textarea placeholder='describe the situation (at least 5 words)'
+          id='descriptions'
+          disabled={this.state.angryCount === 3} />
       </div>
     )
   }
