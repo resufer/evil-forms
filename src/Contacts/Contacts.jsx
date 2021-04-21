@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class Contacts extends React.Component {
   state = {
     errorCondition: false,
@@ -37,7 +36,11 @@ class Contacts extends React.Component {
     return (
       <div className='contacts'>
         {this.state.errorCondition && <div className='alert'>Enter a valid email address</div>}
-        <input type="email" placeholder='Your email' id='email' disabled={this.state.angryCount === 3} />
+        <input type="email"
+          placeholder='Your email'
+          id='email'
+          autocomplete="off"
+          disabled={this.state.angryCount === 3} />
       </div>
     )
   }
