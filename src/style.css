@@ -7,14 +7,15 @@
 .wrapper {
   width: 100vw;
   height: 100vh;
-  background-color: aqua;
+  background-color: white;
+  transition: background-color 5s linear;
 }
 
 .general {
   width: 80vw;
   height: 100vh;
   margin: 0 auto;
-  background-color: aquamarine;
+  background-color: rgb(94, 255, 201);
 }
 
 .general__title {
@@ -83,7 +84,21 @@
 }
 
 .send button {
-  width: 50%;
+  width: 40%;
   height: 20%;
+  font-size: calc(0.5vw + 15px);
+  cursor: pointer;
 }
 
+.send button:disabled {
+  color: #111;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 1);
+  background-color: #ccc;
+  border: 1px solid;
+  border-color: #202020 #1a1a1a #111;
+  border-radius: 2px;
+  background-image: linear-gradient(to bottom, #efefef, #777);
+  cursor: wait;
+}
