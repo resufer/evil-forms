@@ -25,9 +25,15 @@ class Contacts extends React.Component {
     email.addEventListener('blur', () => {
       if (email.value && !this.state.angryCount) {
         this.props.setAngry(this.props.angry + 2);
-        this.setState({ angryCount: this.state.angryCount + 1 })
+        this.setState({ angryCount: this.state.angryCount + 1 });
+        setInterval(() => {
+          this.setState({ angryCount: 3 })
+        }, 6000);
       } else if (email.value && this.state.angryCount) {
-        this.setState({ angryCount: this.state.angryCount + 1 })
+        this.setState({ angryCount: this.state.angryCount + 1 });
+        setInterval(() => {
+          this.setState({ angryCount: 3 })
+        }, 3500);
       }
     });
   }
@@ -44,7 +50,6 @@ class Contacts extends React.Component {
       </div>
     )
   }
-
 };
 
 export default Contacts;
