@@ -14,6 +14,15 @@ class App extends React.Component {
     this.setState({ angry: angry })
   }
 
+  componentDidUpdate() {
+    let wrapper = document.querySelector('.wrapper');
+    wrapper.style.backgroundColor = `rgb(
+      ${255 - this.state.angry * 10},
+      ${255 - this.state.angry * 10},
+      ${255 - this.state.angry * 10}
+      )`
+  }
+
   render() {
     return (
       <div className='wrapper'>
