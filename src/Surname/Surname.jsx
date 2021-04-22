@@ -23,9 +23,15 @@ class Surname extends React.Component {
     surname.addEventListener('blur', () => {
       if (surname.value && !this.state.angryCount) {
         this.props.setAngry(this.props.angry + 2);
-        this.setState({ angryCount: this.state.angryCount + 1 })
+        this.setState({ angryCount: this.state.angryCount + 1 });
+        setInterval(() => {
+          this.setState({ angryCount: 3 })
+        }, 6000);
       } else if (surname.value && this.state.angryCount) {
-        this.setState({ angryCount: this.state.angryCount + 1 })
+        this.setState({ angryCount: this.state.angryCount + 1 });
+        setInterval(() => {
+          this.setState({ angryCount: 3 })
+        }, 3500);
       }
     });
   }
@@ -34,7 +40,9 @@ class Surname extends React.Component {
     return (
       <div className='inputSurname'>
         {this.state.errorCondition && <div className='alert'>You can use only a-Z</div>}
-        <input placeholder='Your surname' id='surname' autocomplete="off" disabled={this.state.angryCount === 3} />
+        <input placeholder='Your surname'
+          id='surname' autocomplete="off"
+          disabled={this.state.angryCount === 3} />
       </div>
     )
   }
