@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class Name extends React.Component {
   state = {
     errorCondition: false,
@@ -14,7 +13,7 @@ class Name extends React.Component {
       if (!((e.key.codePointAt() >= 65 && e.key.codePointAt() <= 90)
         || (e.key.codePointAt() >= 97 && e.key.codePointAt() <= 122))) {
         this.setState({ errorCondition: true });
-        name.value = name.value.slice(0, name.value.length - 1)
+        name.value = name.value.slice(0, name.value.length - 1);
         setTimeout(() => {
           this.setState({ errorCondition: false });
         }, 2000)
@@ -24,9 +23,15 @@ class Name extends React.Component {
     name.addEventListener('blur', () => {
       if (name.value && !this.state.angryCount) {
         this.props.setAngry(this.props.angry + 2);
-        this.setState({ angryCount: this.state.angryCount + 1 })
+        this.setState({ angryCount: this.state.angryCount + 1 });
+        setInterval(() => {
+          this.setState({ angryCount: 3 })
+        }, 6000);
       } else if (name.value && this.state.angryCount) {
-        this.setState({ angryCount: this.state.angryCount + 1 })
+        this.setState({ angryCount: this.state.angryCount + 1 });
+        setInterval(() => {
+          this.setState({ angryCount: 3 })
+        }, 3500);
       }
     });
   }
@@ -35,7 +40,10 @@ class Name extends React.Component {
     return (
       <div className='inputName'>
         {this.state.errorCondition && <div className='alert'>You can use only a-Z</div>}
-        <input placeholder='Your name' id='name' autocomplete="off" disabled={this.state.angryCount === 3} />
+        <input id='name'
+          placeholder='Your name'
+          autocomplete="off"
+          disabled={this.state.angryCount === 3} />
       </div>
     )
   }
