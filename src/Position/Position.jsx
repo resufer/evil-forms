@@ -11,7 +11,7 @@ class Position extends React.Component {
 
     position.addEventListener('blur', () => {
       if (position.value && !this.state.angryCount) {
-        this.props.setAngry(this.props.angry + 2);
+        this.props.setAngry(2);
         this.setState({ angryCount: this.state.angryCount + 1 });
         setInterval(() => {
           this.setState({ angryCount: 3 })
