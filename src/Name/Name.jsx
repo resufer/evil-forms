@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class Name extends React.Component {
   state = {
     errorCondition: false,
@@ -22,7 +23,7 @@ class Name extends React.Component {
 
     name.addEventListener('blur', () => {
       if (name.value && !this.state.angryCount) {
-        this.props.setAngry(this.props.angry + 2);
+        this.props.setAngry(2);
         this.setState({ angryCount: this.state.angryCount + 1 });
         setInterval(() => {
           this.setState({ angryCount: 3 })
