@@ -22,7 +22,7 @@ class Surname extends React.Component {
 
     surname.addEventListener('blur', () => {
       if (surname.value && !this.state.angryCount) {
-        this.props.setAngry(this.props.angry + 2);
+        this.props.setAngry(2);
         this.setState({ angryCount: this.state.angryCount + 1 });
         setInterval(() => {
           this.setState({ angryCount: 3 })
